@@ -1,0 +1,417 @@
+REACT
+---------------
+- ITS A popular open source  web application library
+- develop and maintained by meta/facebook
+- use to create UI : (UI :user interact with system)
+
+UI - User Interface
+--------------------
+- point where the user - computer communication/interaction take place.
+
+reference : diff b/w library and a framework
+
+Features of REACT
+---------------------
+- ita a library
+- its a single page application(SPA) - only one page loads in the browswer - index.html
+- declarative application -
+    - doesnot directly update the DOM
+- VDOM - Virtual DOM -
+    - create by REACT
+    - its a copy of real dom
+
+    - diffing - the process of comparing VDOM with real DOM
+    - reconcilliation - the process of updating the DOM
+
+- Pure function
+    - output of the function should only depended on Arguments or variablesin the function
+
+- Data sharing
+    - unidirectional : parent to child
+
+- Language
+    - jsx - javascript XML : combination of html and js
+        - file_extension - .js , .jsx
+
+- Transpiling
+    - conversion of jsx in to browswer understanding Languages.
+    - babel library(converion library)    
+
+
+
+How to create a Project
+-------------------------
+
+command : npx create-react-app projectname
+
+File And folders
+------------------
+1. README : description of the application
+2. package.json : application configaration
+                - dependencies : installed libraries name
+                - script : start - run
+
+3. package.lock.json : it contains version and imp features like integrity , resolved to run the installed libraries properly with the application.
+
+4. node modules : contain the copy of installed libraries.
+5. .gitignore : holds the name of the file which need to be ignore while pushing in to git.
+6. public : contents which has globally accessable
+        - index.html : files thats loads in to browswer
+
+
+Components
+------------
+- Are the basic units of designing
+- extension - .js , .jsx
+- 2 types
+    1).function components/stateless components
+    2).class components/stateful components
+
+rules to create components
+-------------------------------
+1. component name must start with capital letters
+2. extension can be .js or .jsx
+3. renaming is not possible
+
+
+- entire jsx contents must be placed inside a single parent tag
+- empty fragment - <>content</>
+
+
+How to apply css
+-----------------------
+1).inline - style = {{property:value ,...}}     (react inline syntax)
+2).external - .css external file
+            -  link - import 'path'
+            -  selector{
+                property:value
+            }
+
+3).css modules
+        - create an external file with extension as - .module.css
+        - it should be created only inside src folder
+        - link - import variablename from 'path'
+        - selector{
+            property:value
+        }
+
+
+how to apply js code
+----------------------------
+- all js code logics should be placed above the return function
+- inorderd to access variable/content inside jsx - provide curly brackets
+
+
+
+functional component
+------------------------------
+
+function name(){
+    //js code
+    return(
+        //jsx code
+    )
+}
+
+export default fname
+
+
+class component-
+------------------
+export default class Random extends Component {
+  render() {
+    return (
+      <div>Random</div>
+    )
+  }
+}
+
+
+Data sharing
+-------------
+- props
+- done with the help of pre defined object called props.
+
+Destructure
+------------
+{key,......}
+
+
+
+Events
+------------
+actions that can lead to a change (click,submit,load)
+
+onclick => onClick
+
+onclick = "fname(arg)"
+
+- function without agr in react
+    onClick = {fname}
+
+- function with arg in react (using call back)
+    onClick = {()=>{fname(arg)}}
+
+
+
+Conditional rendering
+-------------------------
+1).ternary - condition?true:false
+2).truthy - condition && true (&& - ambrasent)
+
+
+State ( used to store data.)
+-------
+- is an object(key:value ) which stores properties of a class component
+- create state inside the constructor
+- when the value of a state changes the entire component reload.
+- setstate() - method to change the state of a component
+- 
+
+
+
+Life cycle of class components
+-------------------------------
+1). Mounting phase - creation of components
+2). update phase - editing of components
+3). unmounting phase - removal of components
+
+Mounting phase
+----------------------
+1. constructor() - initialisation of state
+2. getDerivedStateFromProps() - return state/data(updating) or else null(no updation)
+3. render() - return jsx - output - load in to browswer
+4. componentDidMount() - network calls (api) - handles sideEffect
+
+
+update phase
+--------------
+1. getDerivedStateFromProps() - 
+2. shouldComponentUpdate() - returns true or false - true: update ,false:not update
+3. render() - jsx
+4. getSnapShotBeforeUpDAT() - vdom 
+5. componentDidUpdate() - dom updating,api calls
+
+
+unmounting phase
+------------------
+1.componentWillUnmount() - stops all side effects and remove the componentfrom the DOM
+
+error handling phase
+---------------------
+1)
+
+
+sideEffect
+-----------
+all activities that act against the pure functionis Categoriesed as side effects
+
+
+
+HOOks
+-------------
+- Hooks are functions to achieve state and lifecycle for the funmctional components
+- 2 types
+    - predifined Hooks (build in hooks)
+    ----------------------
+      eg: useState() - helps to create states in functional components
+           syntax
+           ------------
+           const[statename,functionname] = useState("initial value")
+
+          useEffects() - helps to achieve lifecycle for a functional component etc..
+    - custome Hooks 
+
+
+Rules to use Hooks
+--------------------------
+1). must import hooks before using that in the component
+2). hooks must call at the top of a functional component
+3). hooks cannot be used on conditional basis.
+
+
+match
+----------------
+predefined method 
+- matchn returns arayy when the value
+
+
+
+Setting up path for ract application
+------------------------------------------
+1), install react router dom library -npm i react-router-dom
+2).route tag is used to set the path to a given component with the help of path and element attribute
+3).Route tag only exist as the child of Routes tag
+4).wrap app selector/tag inside BrowserRouter tag to enable routing
+
+grid 
+------------
+
+Bootstrap
+----------
+.container
+  .row
+    .col-md-3
+
+React Bootstrap
+-----------------
+<Container>
+  <Row>
+    <Col md ={3}>
+
+
+Json-server
+--------------------
+json server is a light weight and easy to use node.js tool that can stimulate RESTFUL api using a Json file as data source
+
+- basically used by frontend developers - 
+- can perform crud - create read update delete - based of http
+
+
+steps to setup json.server
+-------------------------------
+1.create a seperate folder for a server
+2.create package.json file - application configaration
+          command -      npm init -y
+3.install json server library - npm i json-server - latest version
+                              - npm i json-server@version - 0.17.4   (npm i json-server@0.17.4)
+             install
+             -----------------                 
+            - package-lock.json
+            - node_modules
+
+4.create-  .gitignore files
+5.create- .json file to store data
+6.index.js - only file that runs in the server side
+7.edit the script key in package.json file 
+8.create the server in the index.js file
+        - ipoert jsonServer library
+        - create the server using create method in json server library
+        - set port for the server
+        - make the server listen to that port
+
+
+Middleeware
+---------------
+- its is a function which have the capacicity to break the request response cycle
+
+
+
+Axios api
+------------
+- a technique to create http client request (api call)
+- based on promise
+- usage
+  ---------
+  - 1).install axios in frontend - command = npm install axios   (check package.json-dependencies-axios)
+  - 2). import                               ------------------
+  - 3). axios configaration
+        config = {
+            method: http request-get put post delete,
+            url: path to serverside,
+            data: share data,
+            headers: content - type of data
+            }
+
+    content-tyep : 1).application/json - input field
+                   2).multypart/form-data - uploaded content
+
+  - axios will convert object in to json
+        
+
+
+useEffect
+------------------
+- used to handle side effects
+    eg: api calls
+
+    useEffect(()=>{
+
+    }, dependency)
+
+    - first arg - function
+    - second arg - dependency (optional)
+
+
+    type of dependency
+
+    1).no dependency - calls in every render 
+    2).empty array - useEffect - call when component render in to the browswer
+    3).passing state or props ([state , props]) - call when the component render in to the browser as well as the value of the statw or props changes
+
+
+
+another method in sharing data from react
+
+state Lifting
+---------------
+- the process of sharing data b/w components (other than parent-child) 
+- state is created in the closest commom parent/ancestor
+- function to change the state is passed to the component which provide data and state is passed to the component which   display data
+
+
+sharing data to the server side
+--------------------------------
+- body parameter
+- path parameter
+- query parameter
+
+
+The Intl.DateTimeFormat object enables language-sensitive date and time formatting.
+-----------------------------------------------------------------------------------
+
+
+Drag and drop mechanism
+-----------------------------
+1). draggable - provided to the element which need to be dragged
+2). droppable - provided to the element where the dropping happends
+
+Events
+-------
+3). onDragStart - setData("key"),value - data share
+4). onDragOver
+5). onDrop - getData(key) - access data
+
+
+
+
+prop drilling
+-----------------
+its occurs when a parent component generate its state and passes it down has props its children component that donot consumes the props,insted, they only passes it down to another component that finally consumes it.
+
+coupling
+----------
+interdependency of components.
+
+elongated props
+-----------------
+- props which are neither created not consumes by components are called elongated props.
+
+
+disadvantages of coupling:it can leades to 
+
+- prefer on small scale projects
+
+
+
+redux - state management
+------------------------
+- A JS library for predictable and maintainable global state management
+- componets of redux
+  1).action - createAction() --function
+  2).reducer - createReducer()
+  3).store - configurStore()
+
+Redux Toolkit
+-----------------
+- components
+  1).store - configurStore()
+  2).slice - createSlice()
+
+steps to create apps using redux toolkit
+----------------------------------------
+
+1). install react redux and redux toolkit
+   - npm install @reduxjs/toolkit
+   - npm install react-redux
+2). create the slice - using - createSlice() - accepts an object of reducers functions, a slice name, and an initial state value, and automatically generates a slice reducer with corresponding action
